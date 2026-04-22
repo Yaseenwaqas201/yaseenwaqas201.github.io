@@ -1,1 +1,13 @@
+google.com, pub-6181515002998369, DIRECT, f08c47fec0942fa0 
 
+facebook.com, 852164086332269, RESELLER, c3e20eee3f780d68 
+
+facebook.com, 1374611883591100, RESELLER, c3e20eee3f780d68 
+
+facebook.com, 1289026869058207, RESELLER, c3e20eee3f780d68 
+
+facebook.com, 706111988304107, RESELLER, c3e20eee3f780d68 
+
+mintegral.com, 46543, DIRECT, 0aeed750c80d6423 
+
+ironsrc.com, 617571, DIRECT 
