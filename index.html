@@ -4,23 +4,23 @@
 <meta charset="UTF-8">
 
 <!-- SEO -->
-<meta name="description" content="Play cooking and casual games by Alpha Game Studio.">
+<meta name="description" content="Play Fun casual games free and offline play .">
 
-<!-- Mobile Responsive -->
+<!-- Mobile -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Title -->
 <title>Alpha Game Studio</title>
 
 <!-- Favicon -->
-<link rel="icon" href="assets/logo.png">
+<link rel="icon" href="logo.png">
 
 <style>
 body {
     margin: 0;
     font-family: Arial;
-    background: #0f0f1a;
+    background: radial-gradient(circle at top, #1a1033, #0a0815);
     color: white;
+    overflow-x: hidden;
 }
 
 /* HEADER */
@@ -29,24 +29,32 @@ body {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    padding: 25px 10px;
+    padding: 30px 10px;
+    animation: fadeIn 1s ease;
 }
 
 .header img {
-    width: 60px;
+    width: 70px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #b57cff;
 }
 
+/* JUICY TITLE */
 .header h1 {
     margin: 0;
-    color: #b57cff; /* Royal Purple */
-    font-size: 28px;
+    font-size: 32px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #b57cff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s infinite alternate;
 }
 
 /* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, 150px);
-    gap: 25px;
+    gap: 30px;
     justify-content: center;
     padding: 20px;
 }
@@ -55,16 +63,23 @@ body {
 .game {
     position: relative;
     cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.game:hover {
+    transform: translateY(-5px);
 }
 
 .game img {
     width: 150px;
     border-radius: 20px;
     transition: 0.3s;
+    box-shadow: 0 0 15px rgba(181,124,255,0.3);
 }
 
 .game:hover img {
     transform: scale(1.1);
+    box-shadow: 0 0 25px #b57cff;
 }
 
 /* OVERLAY */
@@ -73,7 +88,7 @@ body {
     top: 0;
     width: 150px;
     height: 150px;
-    background: rgba(0,0,0,0.85);
+    background: rgba(10, 5, 20, 0.9);
     border-radius: 20px;
     opacity: 0;
     display: flex;
@@ -90,8 +105,8 @@ body {
 /* STORE BUTTONS */
 .overlay a {
     background: linear-gradient(45deg, #7b2cff, #b57cff);
-    padding: 6px;
-    border-radius: 10px;
+    padding: 8px;
+    border-radius: 12px;
     text-decoration: none;
     color: white;
     font-size: 12px;
@@ -99,8 +114,20 @@ body {
 }
 
 .overlay a:hover {
-    background: #d1a6ff;
-    color: black;
+    background: #ffffff;
+    color: #6a00ff;
+    transform: scale(1.05);
+}
+
+/* ANIMATIONS */
+@keyframes glow {
+    from { text-shadow: 0 0 10px #b57cff; }
+    to { text-shadow: 0 0 25px #ffffff; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head>
@@ -109,7 +136,7 @@ body {
 
 <!-- HEADER -->
 <div class="header">
-    <img src="assets/logo.png" alt="Alpha Game Studio Logo">
+    <img src="logo.png" alt="Alpha Game Studio Logo">
     <h1>Alpha Game Studio</h1>
 </div>
 
@@ -121,7 +148,7 @@ const games = [
   {
     id: "cooking",
     name: "Cooking Utopia",
-    icon: "assets/games/cooking.png",
+    icon: "cooking.png",
     stores: [
       { name: "PlayStore", link: "https://play.google.com/" },
       { name: "Amazon", link: "https://www.amazon.com/" }
@@ -130,7 +157,7 @@ const games = [
   {
     id: "puzzle",
     name: "Puzzle Game",
-    icon: "assets/games/puzzle.png",
+    icon: "puzzle.png",
     stores: [
       { name: "PlayStore", link: "#" },
       { name: "App Store", link: "#" }
