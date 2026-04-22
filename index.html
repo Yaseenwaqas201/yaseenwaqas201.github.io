@@ -207,4 +207,110 @@
         
         /* Play Store & Apple (Black Buttons) */
         .download-btn.play, .download-btn.apple { 
-            background-color: #111;
+            background-color: #111; 
+            border: 1px solid #333; 
+            color: #ffffff;
+        }
+        .download-btn.play:hover, .download-btn.apple:hover { 
+            background-color: #222; 
+        }
+
+        /* Amazon (White Button) */
+        .download-btn.amazon { 
+            background-color: #ffffff; 
+            border: 1px solid #d5d5d5; 
+            color: #111111; 
+        }
+        .download-btn.amazon:hover { 
+            background-color: #f2f2f2; 
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="studio-header">
+        <img src="studioicon.png" alt="Alpha Game Studio Icon" class="studio-icon">
+        <h1 class="studio-title">Alpha Game Studio</h1>
+    </header>
+
+    <main class="games-portfolio">
+        <div class="games-grid">
+
+            <div class="game-card">
+                <div class="game-content">
+                    <img src="rushcooking.png" alt="Rush Cooking" class="game-icon">
+                    <h2 class="game-title">Rush Cooking: Chef Madness</h2>
+                </div>
+                
+                <div class="download-buttons">
+                    <a class="download-btn apple" href="#">
+                        <img src="appleIcon.png" alt="App Store Logo">
+                        <div class="btn-text">
+                            <span class="small-text">Download on the</span>
+                            <span class="large-text">App Store</span>
+                        </div>
+                    </a>
+                    <a class="download-btn play" href="https://play.google.com/store/apps/details?id=com.CookingUtopia.Canteen.Kitchen.MadnessChef.Craze.Fever">
+                        <img src="playstoreIcon.png" alt="Google Play Logo">
+                        <div class="btn-text">
+                            <span class="small-text">GET IT ON</span>
+                            <span class="large-text">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-content">
+                    <img src="hiddenObject.png" alt="Hidden Object" class="game-icon">
+                    <h2 class="game-title">Hidden Object: Find It Game</h2>
+                </div>
+                
+                <div class="download-buttons">
+                    <a class="download-btn apple" href="#">
+                        <img src="appleIcon.png" alt="App Store Logo">
+                        <div class="btn-text">
+                            <span class="small-text">Download on the</span>
+                            <span class="large-text">App Store</span>
+                        </div>
+                    </a>
+                    <a class="download-btn play" href="#">
+                        <img src="playstoreIcon.png" alt="Google Play Logo">
+                        <div class="btn-text">
+                            <span class="small-text">GET IT ON</span>
+                            <span class="large-text">Google Play</span>
+                        </div>
+                    </a>
+                    <a class="download-btn amazon" href="https://www.amazon.com/gp/mas/dl/android?p=com.cookingutopia.foodgame.adventure">
+                        <img src="amazonIcon.png" alt="Amazon Logo">
+                        <div class="btn-text">
+                            <span class="small-text">GET IT ON</span>
+                            <span class="large-text">Amazon Store</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-content">
+                    <img src="fashion.png" alt="Fashion DressUp" class="game-icon">
+                    <h2 class="game-title">Fashion Makeover: Makeup Games</h2>
+                </div>
+                
+                <div class="download-buttons">
+                    <a class="download-btn play" href="#">
+                        <img src="playstoreIcon.png" alt="Google Play Logo">
+                        <div class="btn-text">
+                            <span class="small-text">GET IT ON</span>
+                            <span class="large-text">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
