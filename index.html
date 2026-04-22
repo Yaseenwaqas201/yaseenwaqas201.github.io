@@ -31,24 +31,48 @@
         }
 
         .studio-icon {
-            width: 140px;
-            height: 140px;
-            border-radius: 30px;
-            object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            width: 160px; /* Slightly larger for clarity */
+            height: 160px;
+            border-radius: 35px;
+            /* 'contain' stops the image from shrinking or cropping awkwardly */
+            object-fit: contain; 
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
             margin-bottom: 20px;
+            background-color: transparent;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Added a tiny bit of juice to the icon on hover as well */
+        .studio-icon:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 71, 87, 0.3);
         }
 
         .studio-title {
             margin: 0;
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             font-weight: 800;
             letter-spacing: 2px;
             text-transform: uppercase;
-            background: linear-gradient(90deg, #ffffff, #a8a8b3);
+            
+            /* Juicy Animated Gradient Setup */
+            background: linear-gradient(90deg, #ffffff 0%, #ff4757 33%, #ff7eb3 66%, #ffffff 100%);
+            background-size: 300% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            
+            /* The Flow Animation */
+            animation: juiceFlow 4s linear infinite;
+            
+            /* A subtle red glow behind the text */
+            filter: drop-shadow(0 4px 10px rgba(255, 71, 87, 0.3));
+        }
+
+        /* Keyframes for the Title Juice Effect */
+        @keyframes juiceFlow {
+            0% { background-position: 0% center; }
+            100% { background-position: 300% center; }
         }
 
         /* === Games Grid Layout === */
