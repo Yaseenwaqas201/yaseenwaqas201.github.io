@@ -92,20 +92,20 @@
             transition: all 0.3s ease;
             cursor: pointer;
             
-            /* Flex layout for static display */
+            /* Flex layout strictly stacking from top to bottom */
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Stack from top to bottom naturally */
+            justify-content: flex-start; 
             min-height: 380px; 
-            gap: 20px; /* Clean gap between the title and the buttons */
+            gap: 20px; /* Consistent gap between title and buttons */
         }
 
         /* === Hover Effect on the Whole Card === */
         .game-card:hover {
             box-shadow: 0 15px 40px rgba(0,0,0,0.6);
             background-color: #21242d;
-            transform: translateY(-8px); /* Card subtly lifts up */
+            transform: translateY(-8px); 
         }
 
         .game-content {
@@ -113,8 +113,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex: 1; /* This pushes the buttons consistently to the bottom */
-            justify-content: center;
+            /* Removed flex: 1 so it doesn't push buttons to the bottom */
         }
 
         .game-icon {
@@ -140,7 +139,6 @@
             width: 100%;
             max-width: 220px; 
             margin: 0 auto;
-            /* Buttons are now permanently visible, no hiding needed */
         }
 
         .download-btn {
