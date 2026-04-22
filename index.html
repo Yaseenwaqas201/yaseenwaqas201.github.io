@@ -97,7 +97,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 400px; /* Increased slightly to fit stacked buttons */
+            min-height: 440px; /* Increased to give buttons breathing room */
             border: 1px solid rgba(255,255,255,0.05);
         }
 
@@ -128,8 +128,9 @@
             border-color: rgba(255,255,255,0.1);
         }
 
+        /* Move the content much higher to avoid overlapping buttons */
         .game-card:hover .game-content {
-            transform: scale(1.1) translateY(-40px);
+            transform: scale(1.05) translateY(-70px); 
         }
 
         .game-card:hover .download-buttons {
@@ -145,13 +146,13 @@
             right: 0;
             display: flex;
             flex-direction: column;
-            gap: 10px; /* Slightly reduced gap so 3 buttons fit cleanly */
-            width: 85%;
-            max-width: 400px;
+            gap: 8px; /* Slightly tighter gap */
+            width: 80%;
+            max-width: 250px; /* Kept narrow so buttons aren't huge */
             margin-left: auto;
             margin-right: auto;
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px); /* Start a bit lower */
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
@@ -159,14 +160,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            padding: 8px 15px; /* Slimmer padding for a sleeker look */
+            gap: 10px;
+            padding: 6px 12px; /* Smaller padding */
             border-radius: 10px;
             text-decoration: none;
             transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             text-align: left; 
-            color: #ffffff; /* Ensure text is white */
         }
 
         .download-btn:active {
@@ -175,7 +175,7 @@
         }
 
         .download-btn img {
-            width: 30px; 
+            width: 24px; /* Smaller icons */
             height: auto; 
             object-fit: contain;
         }
@@ -188,26 +188,39 @@
         }
 
         .small-text {
-            font-size: 0.65rem;
+            font-size: 0.55rem; /* Smaller sub-text */
             font-weight: 600;
             opacity: 0.8;
             letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .large-text {
-            font-size: 1.1rem;
+            font-size: 0.95rem; /* Smaller main text */
             font-weight: 700;
         }
 
         /* Specific Store Colors */
-        .download-btn.amazon { background-color: #232f3e; border: 1px solid #FF9900; }
-        .download-btn.amazon:hover { background-color: #37475a; }
+        
+        /* Play Store & Apple (Black Buttons) */
+        .download-btn.play, .download-btn.apple { 
+            background-color: #111; 
+            border: 1px solid #333; 
+            color: #ffffff;
+        }
+        .download-btn.play:hover, .download-btn.apple:hover { 
+            background-color: #222; 
+        }
 
-        .download-btn.play { background-color: #111; border: 1px solid #333; }
-        .download-btn.play:hover { background-color: #222; }
-
-        .download-btn.apple { background-color: #111; border: 1px solid #333; }
-        .download-btn.apple:hover { background-color: #222; }
+        /* Amazon (White Button) */
+        .download-btn.amazon { 
+            background-color: #ffffff; 
+            border: 1px solid #d5d5d5; 
+            color: #111111; /* Dark text for contrast */
+        }
+        .download-btn.amazon:hover { 
+            background-color: #f2f2f2; 
+        }
 
     </style>
 </head>
