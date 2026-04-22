@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- SEO -->
+<meta name="description" content="Play cooking and casual games by Alpha Game Studio.">
+
+<!-- Mobile Responsive -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Title -->
+<title>Alpha Game Studio</title>
+
+<!-- Favicon -->
+<link rel="icon" href="assets/logo.png">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f0f1a;
+    color: white;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 25px 10px;
+}
+
+.header img {
+    width: 60px;
+}
+
+.header h1 {
+    margin: 0;
+    color: #b57cff; /* Royal Purple */
+    font-size: 28px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
+    gap: 25px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* GAME CARD */
+.game {
+    position: relative;
+    cursor: pointer;
+}
+
+.game img {
+    width: 150px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.game:hover img {
+    transform: scale(1.1);
+}
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 150px;
+    background: rgba(0,0,0,0.85);
+    border-radius: 20px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.game:hover .overlay {
+    opacity: 1;
+}
+
+/* STORE BUTTONS */
+.overlay a {
+    background: linear-gradient(45deg, #7b2cff, #b57cff);
+    padding: 6px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.overlay a:hover {
+    background: #d1a6ff;
+    color: black;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="assets/logo.png" alt="Alpha Game Studio Logo">
+    <h1>Alpha Game Studio</h1>
+</div>
+
+<!-- GRID -->
+<div class="grid" id="gameGrid"></div>
+
+<script>
+const games = [
+  {
+    id: "cooking",
+    name: "Cooking Utopia",
+    icon: "assets/games/cooking.png",
+    stores: [
+      { name: "PlayStore", link: "https://play.google.com/" },
+      { name: "Amazon", link: "https://www.amazon.com/" }
+    ]
+  },
+  {
+    id: "puzzle",
+    name: "Puzzle Game",
+    icon: "assets/games/puzzle.png",
+    stores: [
+      { name: "PlayStore", link: "#" },
+      { name: "App Store", link: "#" }
+    ]
+  }
+];
+
+const grid = document.getElementById("gameGrid");
+
+games.forEach(game => {
+    let storeButtons = game.stores.map(s =>
+        `<a href="${s.link}" target="_blank" rel="noopener">${s.name}</a>`
+    ).join("");
+
+    grid.innerHTML += `
+        <div class="game" onclick="openGame('${game.id}')">
+            <img src="${game.icon}" alt="${game.name}">
+            <div class="overlay">
+                ${storeButtons}
+            </div>
+        </div>
+    `;
+});
+
+function openGame(id) {
+    window.location.href = "game.html?id=" + id;
+}
+</script>
+
+</body>
+</html>
